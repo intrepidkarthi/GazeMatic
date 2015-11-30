@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+          
+<!--
+If you are looking at this, shoot a mail to karthik@gazematic.com. I will buy you a cup of coffee. Lets talk.
+
+
+                    _.' :  `._
+                .-.'`.  ;   .'`.-.
+       __      / : ___\ ;  /___ ; \      __
+     ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
+     :' `.t""=-.. '<@.`;_  '<@:` ..-=""j.' `;
+          `:-.._n '-.-'c__ `-.-' k_..-;'
+            "-.__ ;  .-"  "-.  : __.-"
+                l ' /.======.\ ' l
+                 "-.   "__"   .-"
+                __.l"-:_  _;-";.__
+             .-l/'.;  ;""""  / .'\"-.
+           .' /:`. "-.:     .-" .';  `.
+        .-"  / ;  "-. "-..-" .-"  :    "-.
+     .+"-.  : :      "-.__.-"      ;-._   \
+     ; \  `.; ;                    : : "+. ;
+     :  ;   ; ;                    : ;  : \:
+     ;  :   ; :     GazeMatic      ;:   ;  :
+    : \  ;  :  ;                  : ;  /  ::
+    ;  ; :   ; :                  ;   :   ;:
+    :  :  ;  :  ;                : :  ;  : ;
+    ;\    :   ; :                ; ;     ; ;
+    : `."-;   :  ;              :  ;    /  ;
+     ;    -:   ; :              ;  : .-"   :
+     :\     \  :  ;            : \.-"      :
+      ;`.    \  ; :            ;.'_..-=  / ;
+      :  "-.  "-:  ;          :/."      .'  :
+       \         \ :          ;/  __        :
+        \       .-`.\        /t-""  ":-+.   :
+         `.  .-"    `l    __/ /`. :  ; ; \  ;
+           \   .-" .-"-.-"  .' .'j \  /   ;/
+            \ / .-"   /.     .'.' ;_:'    ;
+             :-""-.`./-.'     /    `.___.'
+                   \ `t  ._  /
+                    "-.t-._:'
+
+-->
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>GazeMatic :: Automatic VR builder</title>
+		<meta name="description" content="Simple and fast VR application builder engine developed using OpenGL and Unity3D" />
+		<meta name="keywords" content="VR apps, VR apps builder, Virtual Reality automation, automatic VR app builder" />
+		<meta name="author" content="Karthikeyan NG" />
+		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+		<!-- Bootstrap -->
+		<script src="js/modernizr.custom.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/jquery.fancybox.css" rel="stylesheet">
+		<link href="css/flickity.css" rel="stylesheet" >
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/queries.css" rel="stylesheet">
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<!-- open/close -->
+		<header>
+			<section class="hero">
+				<div class="texture-overlay"></div>
+				<div class="container">
+					<div class="row nav-wrapper">
+						<div class="col-md-6 col-sm-6 col-xs-6 text-left">
+							<a href="#"><img src="img/logo_gazematic_256.png" alt="GazeMatic Logo"></a>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 text-right navicon">
+							<p>MENU</p><a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
+						</div>
+					</div>
+					<div class="row hero-content">
+						<div class="col-md-12">
+							<h1 class="animated fadeInDown">An awesomatic way to create immersive and interactive Virtual Reality experience for your mobile devices</h1>
+							<!--<a href="#" class="use-btn animated fadeInUp">Download for free</a>--> <a href="#about" class="learn-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</header>
+		<section class="video" id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1><a href="http://www.youtube.com/embed/ITBf_8ZtLjA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> Watch the Video</a></h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="features-intro">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 nopadding features-intro-img">
+						<div class="features-bg">
+							<div class="texture-overlay"></div>
+							<div class="features-img wp1">
+								<img src="img/logo_white_120.png" alt="HTML5 Logo">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 nopadding">
+						<div class="features-slider">
+								<ul class="slides" id="featuresSlider">
+									<li>
+										<h1>The Forefront of VR &amp; Technology</h1>
+										<p> Virtual reality is the future of immersive and interactive experience. GazeMatic’s innovative platform allows you to showcase your interior, institution or business in the most engaging and realistic way available today, using a combination of 3D 360° photos/videos and 3D models. </p>
+										<!--
+										<p><a href="#features" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>
+										-->
+									</li>
+									<li>
+										<h1>The Immersive experience</h1>
+										<p>Build excitement and engagement by virtually transporting viewers to your location and making them feel as if they are physically there. The experience can be viewed on leading virtual reality headsets, including Oculus Rift, Samsung Gear VR, Google CardBoard, Zeiss VR One, and more.</p>
+										<!--<p><a href="#video" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
+									</li>
+									<li>
+										<h1>The Automated 3D modelling capability</h1>
+										<p>Our tool for mobile devices will convert 3D models into VR experience and the tool for Mac and PC will convert floor plans/blueprints into 3d Models. The whole tecchnology is powered by Java, Unity3D, WebGL &amp; OpenGL.</p>
+										<!--<p><a href="#video" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
+									</li>
+									<li>
+										<h1>Made with Love, Made with purpose</h1>
+										<p>Virtual tours and virtual reality content help businesses and institutions increase public awareness, online traffic, quality leads, and in-person visits. Let us know if you need help on taking 360° photos/videos or 3D modelling. Our purpose is to keep innovating on this field of bringing immersive experiences. Currently the SDK is in beta stage. In the meantime, don't forget to drop us a mail. </p>
+										<!--<p><a href="#download" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="features-list" id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="col-md-4 feature-1 wp2">
+							<div class="feature-icon">
+								<i class="fa fa-desktop"></i>
+							</div>
+							<div class="feature-content">
+								<h1>Experience</h1>
+								<p>Build excitement by virtually teleporting viewers to another location and making them feel as if they are physically there.</p>
+								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
+							</div>
+						</div>
+						<div class="col-md-4 feature-2 wp2 delay-05s">
+							<div class="feature-icon">
+								<i class="fa fa-flash"></i>
+							</div>
+							<div class="feature-content">
+								<h1>Innovation</h1>
+								<p>No matter your goals, GazeMatic's powerful virtual reality tour builder reality platform helps you exceed them.</p>
+								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
+							</div>
+						</div>
+						<div class="col-md-4 feature-3 wp2 delay-1s">
+							<div class="feature-icon">
+								<i class="fa fa-heart"></i>
+							</div>
+							<div class="feature-content">
+								<h1>Mission</h1>
+								<p>Mobile phone should be the door for VR to be experienced by everyone aroundt the world.</p>
+								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="showcase">
+			<div class="showcase-wrap">
+				<div class="texture-overlay"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="device wp3">
+								<div class="device-content">
+									<div class="showcase-slider">
+										<ul class="slides" id="showcaseSlider">
+											<li>
+												<img src="img/wallpaper1.jpg" alt="homes">
+											</li>
+											<li>
+												<img src="img/wallpaper2.jpg" alt="Gaze">
+											</li>
+											<li>
+												<img src="img/wallpaper3.jpg" alt="PlanetVR">
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h1>Showcase your Product or Service</h1>
+							<p>Bring your vision to life, whether you’re a small business owner looking to create your own virtual tour or an organization that needs to create virtual tours and virtual reality content at scale, Gaze works with you to make your vision a reality. If you need help on taking 360° professional photos or 3D modelling, we will be happy to help. Checkout the few samples that is available already on the store. New samples and resources are coming up. </p>
+							<!-- <blockquote class="team-quote">
+								<div class="avatar"><img src="img/avatar.png" alt="User Avatar"></div>
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc." - Peter Finlan</p>
+								<div class="logo-quote">
+									<a href="http://tympanus.net/codrops/"><img src="img/codrops-logo.png" alt="Codrops Logo"></a>
+								</div>
+							</blockquote> -->
+							<a target="_blank" href="https://play.google.com/store/apps/developer?id=intrepidkarthi" class="download-btn">Download! <i class="fa fa-download"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="screenshots-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Packed Full of Powerful Usecases and Features</h1>
+						<p> Virtual tours and virtual reality content can be seen on the mobile devices, web, social platforms, and leading virtual reality headsets. Virtual Reality has application everywhere and everyfield of operation.  Here are the few reasons for using GazeMatic's solution</p>
+						<p><a href="#screenshots" class="arrow-btn">See the screenshots! <i class="fa fa-long-arrow-right"></i></a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="screenshots" id="screenshots">
+			<div class="container-fluid">
+				<div class="row">
+					<ul class="grid">
+						<li>
+							<figure>
+								<img src="img/screenshot_01.jpg" alt="Screenshot 01">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_01.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>Real Estate Showcasing</p>
+									</a>
+									
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_02.jpg" alt="Screenshot 02">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/lscreenshot_02.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For app developers</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_03.jpg" alt="Screenshot 03">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_03.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For Architects</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_04.jpg" alt="Screenshot 04">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_04.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>Travellers &amp; Explorers</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
+					<ul class="grid">
+						<li>
+							<figure>
+								<img src="img/screenshot_05.jpg" alt="Screenshot 05">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_05.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For photographers</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_06.jpg" alt="Screenshot 06">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_06.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For realistic 3D modelling</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_07.jpg" alt="Screenshot 07">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_07.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For Hotels &amp; Restaurants</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="img/screenshot_08.jpg" alt="Screenshot 08">
+								<figcaption>
+								<div class="caption-content">
+									<a href="img/screenshot_08.jpg" class="single_image">
+										<i class="fa fa-search"></i><br>
+										<p>For Colleges, Schools &amp; Universities</p>
+									</a>
+								</div>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="download" id="download">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center wp4">
+						<h1>Seen Enough?</h1>
+						<a href="https://play.google.com/store/apps/developer?id=intrepidkarthi" class="download-btn">Download! <i class="fa fa-download"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h1 class="footer-logo">
+						<img src="img/logo_gazematic_black.png" alt="Footer Logo Blue">
+						</h1>
+						<p>© GazeMatic 2015</p>
+					</div>
+					<div class="col-md-7">
+						<ul class="footer-nav">
+							<li><a href="#about">About</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#screenshots">Screenshots</a></li>
+							<li><a href="#download">Download</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="overlay overlay-boxify">
+			<nav>
+				<ul>
+					<li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
+					<li><a href="#features"><i class="fa fa-flash"></i>Features</a></li>
+				</ul>
+				<ul>
+					<li><a href="#screenshots"><i class="fa fa-desktop"></i>Screenshots</a></li>
+					<li><a href="#download"><i class="fa fa-download"></i>Download</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/min/toucheffects-min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/flickity.pkgd.min.js"></script>
+		<script src="js/jquery.fancybox.pack.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/retina.js"></script>
+		<script src="js/waypoints.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/min/scripts-min.js"></script>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='//www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+		ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+	</body>
+</html>
