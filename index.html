@@ -1,436 +1,639 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-          
-<!--
-If you are looking at this, shoot a mail to karthik@gazematic.com. I will buy you a cup of coffee. Lets talk.
+<html dir="ltr" lang="en-US">
+<head>
 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
 
-                    _.' :  `._
-                .-.'`.  ;   .'`.-.
-       __      / : ___\ ;  /___ ; \      __
-     ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
-     :' `.t""=-.. '<@.`;_  '<@:` ..-=""j.' `;
-          `:-.._n '-.-'c__ `-.-' k_..-;'
-            "-.__ ;  .-"  "-.  : __.-"
-                l ' /.======.\ ' l
-                 "-.   "__"   .-"
-                __.l"-:_  _;-";.__
-             .-l/'.;  ;""""  / .'\"-.
-           .' /:`. "-.:     .-" .';  `.
-        .-"  / ;  "-. "-..-" .-"  :    "-.
-     .+"-.  : :      "-.__.-"      ;-._   \
-     ; \  `.; ;                    : : "+. ;
-     :  ;   ; ;                    : ;  : \:
-     ;  :   ; :     GazeMatic      ;:   ;  :
-    : \  ;  :  ;                  : ;  /  ::
-    ;  ; :   ; :                  ;   :   ;:
-    :  :  ;  :  ;                : :  ;  : ;
-    ;\    :   ; :                ; ;     ; ;
-    : `."-;   :  ;              :  ;    /  ;
-     ;    -:   ; :              ;  : .-"   :
-     :\     \  :  ;            : \.-"      :
-      ;`.    \  ; :            ;.'_..-=  / ;
-      :  "-.  "-:  ;          :/."      .'  :
-       \         \ :          ;/  __        :
-        \       .-`.\        /t-""  ":-+.   :
-         `.  .-"    `l    __/ /`. :  ; ; \  ;
-           \   .-" .-"-.-"  .' .'j \  /   ;/
-            \ / .-"   /.     .'.' ;_:'    ;
-             :-""-.`./-.'     /    `.___.'
-                   \ `t  ._  /
-                    "-.t-._:'
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
 
--->
-<html lang="en" class="no-js">
-	<head>
-		<meta http-equiv="refresh" content="0; url=http://teleportcall.com/" />
-		<script type="text/javascript">
-	            window.location.href = "http://teleportcall.com"
-	        </script>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>GazeMatic :: Automatic VR builder</title>
-		<meta name="description" content="Simple and fast VR application builder engine developed using OpenGL and Unity3D" />
-		<meta name="keywords" content="VR apps, VR apps builder, Virtual Reality automation, automatic VR app builder" />
-		<meta name="author" content="Karthikeyan NG" />
-		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
-		<!-- Bootstrap -->
-		<script src="js/modernizr.custom.js"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/jquery.fancybox.css" rel="stylesheet">
-		<link href="css/flickity.css" rel="stylesheet" >
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/queries.css" rel="stylesheet">
-		<!-- Facebook and Twitter integration -->
-		<meta property="og:title" content=""/>
-		<meta property="og:image" content=""/>
-		<meta property="og:url" content=""/>
-		<meta property="og:site_name" content=""/>
-		<meta property="og:description" content=""/>
-		<meta name="twitter:title" content="" />
-		<meta name="twitter:image" content="" />
-		<meta name="twitter:url" content="" />
-		<meta name="twitter:card" content="" />
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
-		<!-- open/close -->
-		<header>
-			<section class="hero">
-				<div class="texture-overlay"></div>
-				<div class="container">
-					<div class="row nav-wrapper">
-						<div class="col-md-6 col-sm-6 col-xs-6 text-left">
-							<a href="#"><img src="img/logo_gazematic_256.png" alt="GazeMatic Logo"></a>
-						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6 text-right navicon">
-							<p>MENU</p><a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
-						</div>
-					</div>
-					<div class="row hero-content">
-						<div class="col-md-12">
-							<h1 class="animated fadeInDown">An awesomatic way to create immersive and interactive Virtual Reality experience for your mobile devices</h1>
-							<!--<a href="#" class="use-btn animated fadeInUp">Download for free</a>--> <a href="#about" class="learn-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
-						</div>
-					</div>
+	<!-- One Page Module Specific Stylesheet -->
+	<link rel="stylesheet" href="css-one/onepage.css" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css-one/et-line.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css-one/fonts.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+
+	<!-- Document Title
+	============================================= -->
+	<title>GazeMatic :: Bringing Virtual Reality into Reality</title>
+		<meta name="description" content="GazeMatic is a technology enabled startup from Bangalore, India working on Virtual Reality and associated technologies. Building first of its kind Virtual Reality application enabled with a voice caller feature where you can be in a virtual land when you are on a call with your pal. As well as we are building the Content Delivery Network to watch events through 360° Live Streaming." />
+		<meta name="keywords" content="Virtual Reality startup, Virtual Reality Startup from India, VR based startup, Teleport Call, Sogn.TV, Sogn music, Teleportcall,teleport vr, sogn tv music" />
+		<meta name="author" content="GazeMatic team" />
+
+	<style>.tp-caption { white-space: nowrap; }</style>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header transparent-header dark static-sticky" data-sticky-class="not-dark" data-sticky-offset="200">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/slider/gazematic_white.png"><img src="images/slider/gazematic_black.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/slider/gazematic_white.png"><img src="images/slider/gazematic_black.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+							<li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
+							<li><a href="#" data-href="#section-about"><div>About</div></a></li>
+							<li><a href="#" data-href="#section-team"><div>Team</div></a></li>
+							<li><a href="#" data-href="#footer"><div>Press</div></a></li>
+							<!-- <li><a href="#" data-href="#section-blog"><div>Blog</div></a></li> -->
+							<li><a href="#" data-href="#footer"><div>Contact</div></a></li>
+						</ul>
+
+					</nav><!-- #primary-menu end -->
+
 				</div>
-			</section>
-		</header>
-		<section class="video" id="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<h1><a href="http://www.youtube.com/embed/ITBf_8ZtLjA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> Watch the Video</a></h1>
-					</div>
-				</div>
+
 			</div>
-		</section>
-		<section class="features-intro">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6 nopadding features-intro-img">
-						<div class="features-bg">
-							<div class="texture-overlay"></div>
-							<div class="features-img wp1">
-								<img src="img/logo_white_120.png" alt="HTML5 Logo">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 nopadding">
-						<div class="features-slider">
-								<ul class="slides" id="featuresSlider">
-									<li>
-										<h1>The Forefront of VR &amp; Technology</h1>
-										<p> Virtual reality is the future of immersive and interactive experience. GazeMatic’s innovative platform allows you to showcase your interior, institution or business in the most engaging and realistic way available today, using a combination of 3D 360° photos/videos and 3D models. </p>
-										<!--
-										<p><a href="#features" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>
-										-->
-									</li>
-									<li>
-										<h1>The Immersive experience</h1>
-										<p>Build excitement and engagement by virtually transporting viewers to your location and making them feel as if they are physically there. The experience can be viewed on leading virtual reality headsets, including Oculus Rift, Samsung Gear VR, Google CardBoard, Zeiss VR One, and more.</p>
-										<!--<p><a href="#video" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
-									</li>
-									<li>
-										<h1>The Automated 3D modelling capability</h1>
-										<p>Our tool for mobile devices will convert 3D models into VR experience and the tool for Mac and PC will convert floor plans/blueprints into 3d Models. The whole tecchnology is powered by Java, Unity3D, WebGL &amp; OpenGL.</p>
-										<!--<p><a href="#video" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
-									</li>
-									<li>
-										<h1>Made with Love, Made with purpose</h1>
-										<p>Virtual tours and virtual reality content help businesses and institutions increase public awareness, online traffic, quality leads, and in-person visits. Let us know if you need help on taking 360° photos/videos or 3D modelling. Our purpose is to keep innovating on this field of bringing immersive experiences. Currently the SDK is in beta stage. In the meantime, don't forget to drop us a mail. </p>
-										<!--<p><a href="#download" class="arrow-btn">GazeMatic<i class="fa fa-long-arrow-right"></i></a></p>-->
-									</li>
-								</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="features-list" id="features">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
 
-						<div class="col-md-4 feature-1 wp2">
-							<div class="feature-icon">
-								<i class="fa fa-desktop"></i>
-							</div>
-							<div class="feature-content">
-								<h1>Experience</h1>
-								<p>Build excitement by virtually teleporting viewers to another location and making them feel as if they are physically there.</p>
-								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
-							</div>
-						</div>
-						<div class="col-md-4 feature-2 wp2 delay-05s">
-							<div class="feature-icon">
-								<i class="fa fa-flash"></i>
-							</div>
-							<div class="feature-content">
-								<h1>Innovation</h1>
-								<p>No matter your goals, GazeMatic's powerful virtual reality tour builder reality platform helps you exceed them.</p>
-								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
-							</div>
-						</div>
-						<div class="col-md-4 feature-3 wp2 delay-1s">
-							<div class="feature-icon">
-								<i class="fa fa-heart"></i>
-							</div>
-							<div class="feature-content">
-								<h1>Mission</h1>
-								<p>Mobile phone should be the door for VR to be experienced by everyone aroundt the world.</p>
-								<!--<a href="#features" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>-->
-							</div>
-						</div>
+		</header><!-- #header end -->
 
-					</div>
+		<section id="slider" class="slider-parallax revslider-wrap clearfix">
+
+			<!--
+			#################################
+				- THEMEPUNCH BANNER -
+			#################################
+			-->
+			<div class="tp-banner-container">
+				<div class="tp-banner" >
+					<ul>    <!-- SLIDE  -->
+						<li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/1.jpg" data-delay="10000"  data-saveperformance="off" data-title="Teleport Call">
+							<!-- MAIN IMAGE -->
+							<img src="images/slider/rev/1.jpg"  alt="kenburns6"  data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right center">
+							<!-- LAYERS -->
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="375"
+							data-y="200"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1000"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3;">
+								<div class="emphasis-title nobottommargin">
+									<h1><span class="t500 font-body opm-large-word nocolor" style="font-size:80px;">Teleport Call</span></h1>
+								</div>
+							</div>
+
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="250"
+							data-y="360"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1250"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3;">
+								<p class="lead" style="font-size:25px;"><b>Explore This World Virtually When You Are On A Call With Your Pal.</b></p>
+							</div>
+
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="510"
+							data-y="450"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1550"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3 ;"><a href="http://teleportcall.com/"target="_blank" class="button button-border button-dark button-circle nomargin active"><span>Download Now</span> <i class="icon-angle-right"></i></a></div>
+
+						</li>
+						<!-- SLIDE  -->
+						<li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/2.jpg" data-delay="10000"  data-saveperformance="off"  data-title="Sogn.TV">
+							<!-- MAIN IMAGE -->
+							<img src="images/slider/rev/2.jpg"  alt="kenburns6"  data-bgposition="center bottom" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-bgpositionend="center top">
+							<!-- LAYERS -->
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="480"
+							data-y="200"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1000"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3;">
+								<div class="emphasis-title nobottommargin">
+									<h1><span class="t500 font-body opm-large-word nocolor" style="font-size:80px">Sogn.TV</span></h1>
+								</div>
+							</div>
+
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="295"
+							data-y="360"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1250"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3;">
+								<p class="lead" style="font-size:25px; font-style:bold;"><b>Join With Local Music Party & Earn Rewards For Watching Videos.</b></p>
+							</div>
+
+							<div class="tp-caption customin ltl tp-resizeme"
+							data-x="540"
+							data-y="450"
+							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+							data-speed="800"
+							data-start="1550"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="https://sogn.tv" target="_blank" class="button button-border button-circle t500 nomargin"><span>Download Now</span> <i class="icon-angle-right"></i></a></div>
+
+						</li>
+					</ul>
 				</div>
-			</div>
+			</div><!-- END REVOLUTION SLIDER -->
+
 		</section>
-		<section class="showcase">
-			<div class="showcase-wrap">
-				<div class="texture-overlay"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="device wp3">
-								<div class="device-content">
-									<div class="showcase-slider">
-										<ul class="slides" id="showcaseSlider">
-											<li>
-												<img src="img/wallpaper1.jpg" alt="homes">
-											</li>
-											<li>
-												<img src="img/wallpaper2.jpg" alt="Gaze">
-											</li>
-											<li>
-												<img src="img/wallpaper3.jpg" alt="PlanetVR">
-											</li>
-										</ul>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap nopadding">
+
+				<div id="section-about" class="center page-section">
+
+					<div class="container clearfix">
+
+						<h2 class="divcenter bottommargin font-body" style="max-width: 700px; font-size: 38px;">Technology Enabled Startup Building Stunning Applications On Virtual Reality</h2>
+
+						<p class="lead divcenter bottommargin" style="max-width: 800px;">GazeMatic is a technology enabled startup from Bangalore, India working on Virtual Reality and associated technologies. Building first of its kind Virtual Reality application enabled with a voice caller feature where you can be in a virtual land when you are on a call with your pal. As well as we are building the Content Delivery Network to watch events through 360° Live Streaming.<br><br>
+
+						We are building indie music discovery platform Sogn.TV, with the aim that we will be live streaming all the events around soon across the globe.</p>
+
+					<!-- 	<p class="bottommargin" style="font-size: 16px;"><a href="#" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="more-link">Learn more <i class="icon-angle-right"></i></a></p> -->
+
+						<div class="clear"  id="section-team"></div>
+
+						<div class="row topmargin-lg divcenter" style="max-width: 1000px;">
+
+							<div class="col-sm-2 bottommargin">
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/1.png" alt="Karthikeyan NG">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://in.linkedin.com/in/intrepidkarthi" target="_blank" class="social-icon si-borderless si-small si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+												<a href="https://www.facebook.com/intrepidkarthi" target="_blank" class="social-icon si-borderless si-small si-facebook" title="Facebook">
+													<i class="icon-facebook"></i>
+													<i class="icon-facebook"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>KARTHIK</h4><span></span></div>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<h1>Showcase your Product or Service</h1>
-							<p>Bring your vision to life, whether you’re a small business owner looking to create your own virtual tour or an organization that needs to create virtual tours and virtual reality content at scale, Gaze works with you to make your vision a reality. If you need help on taking 360° professional photos or 3D modelling, we will be happy to help. Checkout the few samples that is available already on the store. New samples and resources are coming up. </p>
-							<!-- <blockquote class="team-quote">
-								<div class="avatar"><img src="img/avatar.png" alt="User Avatar"></div>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc." - Peter Finlan</p>
-								<div class="logo-quote">
-									<a href="http://tympanus.net/codrops/"><img src="img/codrops-logo.png" alt="Codrops Logo"></a>
-								</div>
-							</blockquote> -->
-							<a target="_blank" href="https://play.google.com/store/apps/developer?id=intrepidkarthi" class="download-btn">Download! <i class="fa fa-download"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
-		<section class="screenshots-intro">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Packed Full of Powerful Usecases and Features</h1>
-						<p> Virtual tours and virtual reality content can be seen on the mobile devices, web, social platforms, and leading virtual reality headsets. Virtual Reality has application everywhere and everyfield of operation.  Here are the few reasons for using GazeMatic's solution</p>
-						<p><a href="#screenshots" class="arrow-btn">See the screenshots! <i class="fa fa-long-arrow-right"></i></a></p>
+							</div>
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/2.png" alt="Mohan Raj MS">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://in.linkedin.com/in/msmohandg" target="_blank" class="social-icon si-borderless si-small si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>MOHAN</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/3.png" alt="Vijay">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://in.linkedin.com/in/vijaysvj-s8" class="social-icon si-borderless si-small si-linkedin" target="_blank" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>VIJAY</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/4.png" alt="Archana">
+										<div class="team-overlay">
+											<!-- <div class="team-social-icons">
+												<a href="#" target="_blank"  class="social-icon si-borderless si-small si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div> -->
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>ARCHANA</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-4 bottommargin clear">
+							</div>
+
+							<div class="col-sm-3 bottommargin">
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/5.png" alt="Sreeju MM">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://in.linkedin.com/in/sreeju-m-m-89892891" class="social-icon si-borderless si-small si-linkedin" target="_blank" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>SREEJU</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/6.png" alt="Aishwariya V">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://www.linkedin.com/in/aishwariya-venkatesh-60a37411b" target="_blank" class="social-icon si-borderless si-small si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>AISH</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-sm-2">
+
+								<div class="team">
+									<div class="team-image">
+										<img src="images/team/7.png" alt="Marmik">
+										<div class="team-overlay">
+											<div class="team-social-icons">
+												<a href="https://www.linkedin.com/in/marmik-shah-a23415120" target="_blank" class="social-icon si-borderless si-small si-linkedin" title="LinkedIn">
+													<i class="icon-linkedin"></i>
+													<i class="icon-linkedin"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="team-desc team-desc-bg">
+										<div class="team-title"><h4>MARMIK</h4><span> </span></div>
+									</div>
+								</div>
+
+							</div>
+
+
+						</div>
+
 					</div>
+
+				</div>
+
+				
+				<div class="container clearfix">
+
+						<div id="oc-clients" class="owl-carousel topmargin image-carousel carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false"data-items-xxs="2" data-items-xs="3" data-items-sm="4" data-items-md="5" data-items-lg="6">
+
+							<div class="oc-item bottommargin"><a href="http://analyticsindiamag.com/10-startups-changing-face-virtual-reality-india/" target="_blank"><img src="images/clients/1.png" alt="Clients"></a></div>
+							<div class="oc-item bottommargin"><a href="http://www.business-standard.com/article/companies/virtual-reality-takes-shape-in-start-up-world-116071300723_1.html" target="_blank"><img src="images/clients/2.png" alt="Clients"></a></div>
+							<div class="oc-item bottommargin"><a href="http://economictimes.indiatimes.com/small-biz/startups/startups-coming-up-with-virtual-reality-solutions-as-companies-embrace-new-technology/articleshow/53256245.cms" target="_blank"><img src="images/clients/3.png" alt="Clients"></a></div>
+							<div class="oc-item bottommargin"><a href="http://www.iamwire.com/2016/03/gazematic-vr-enabled-startup-making-teleport-calling-possibility-future/133960" target="_blank"><img src="images/clients/4.png" alt="Clients"></a></div>
+							<div class="oc-item bottommargin"><a href="https://bizztor.com/is-india-ready-to-face-virtual-reality/" target="_blank"><img src="images/clients/5.png"  alt="Clients"></a></div>
+							<div class="oc-item bottommargin"><a href="https://indianceo.in/2016/07/teleport-call-flying-carpet/" target="_blank"><img src="images/clients/6.png" alt="Clients"></a></div>
+
+						</div>
+
+				
+
+			</div>
+				
+
+		</section><!-- #content end -->
+		
+		
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark noborder">
+
+			<div class="container center">
+				<div class="footer-widgets-wrap">
+
+					<div class="row divcenter clearfix">
+
+						<div class="col-md-4">
+
+							<div class="widget clearfix">
+								<h4>Site Links</h4>
+
+								<ul class="list-unstyled footer-site-links nobottommargin">
+									<li><a href="#" data-scrollto="#wrapper" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Home</a></li>
+									<li><a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">About</a></li>
+									<li><a href="#" data-scrollto="#section-team" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Team</a></li>
+									<li><a href="#" data-scrollto="#footer" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Press</a></li>
+								</ul>
+							</div>
+
+						</div>
+
+
+
+						<div class="col-md-4">
+
+							<div class="widget clearfix">
+								<h4>Contact</h4>
+
+								<p class="lead">GazeMatic<br>91 Springboard,<br>
+												Koramangala, <br>
+												Bengaluru - 560095<br>
+								 <!-- <p class="lead"> -->love@gazematic.com </p>	
+
+							</div>
+
+						</div>
+
+						<div class="col-md-4">
+
+							<div class="widget clearfix">
+								<h4>Social</h4>
+
+								<div class="center topmargin-sm">
+									<a href="https://www.facebook.com/gazematic" target="_blank" class="social-icon inline-block noborder si-small si-facebook" title="Facebook">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a href="https://twitter.com/gazematic" target="_blank" class="social-icon inline-block noborder si-small si-twitter" title="Twitter">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
+									</a>
+									<a href="https://www.linkedin.com/company/gazematic?trk=ppro_cprof" target="_blank" class="social-icon inline-block noborder si-small si-linkedin" title="LinkedIn">
+										<i class="icon-linkedin"></i>
+										<i class="icon-linkedin"></i>
+									</a>
+									<br><br>
+									<p class="lead">
+					© GazeMatic 2016 | All Rights Reserved.
+				</p>
+								</div>
+
+				
+							</div>
+
+						</div>
+
+					</div>
+
 				</div>
 			</div>
-		</section>
-		<section class="screenshots" id="screenshots">
-			<div class="container-fluid">
-				<div class="row">
-					<ul class="grid">
-						<li>
-							<figure>
-								<img src="img/screenshot_01.jpg" alt="Screenshot 01">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_01.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>Real Estate Showcasing</p>
-									</a>
-									
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_02.jpg" alt="Screenshot 02">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/lscreenshot_02.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For app developers</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_03.jpg" alt="Screenshot 03">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_03.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For Architects</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_04.jpg" alt="Screenshot 04">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_04.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>Travellers &amp; Explorers</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-					</ul>
-				</div>
-				<div class="row">
-					<ul class="grid">
-						<li>
-							<figure>
-								<img src="img/screenshot_05.jpg" alt="Screenshot 05">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_05.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For photographers</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_06.jpg" alt="Screenshot 06">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_06.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For realistic 3D modelling</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_07.jpg" alt="Screenshot 07">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_07.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For Hotels &amp; Restaurants</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<img src="img/screenshot_08.jpg" alt="Screenshot 08">
-								<figcaption>
-								<div class="caption-content">
-									<a href="img/screenshot_08.jpg" class="single_image">
-										<i class="fa fa-search"></i><br>
-										<p>For Colleges, Schools &amp; Universities</p>
-									</a>
-								</div>
-								</figcaption>
-							</figure>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-		<section class="download" id="download">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center wp4">
-						<h1>Seen Enough?</h1>
-						<a href="https://play.google.com/store/apps/developer?id=intrepidkarthi" class="download-btn">Download! <i class="fa fa-download"></i></a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<h1 class="footer-logo">
-						<img src="img/logo_gazematic_black.png" alt="Footer Logo Blue">
-						</h1>
-						<p>© GazeMatic 2015</p>
-					</div>
-					<div class="col-md-7">
-						<ul class="footer-nav">
-							<li><a href="#about">About</a></li>
-							<li><a href="#features">Features</a></li>
-							<li><a href="#screenshots">Screenshots</a></li>
-							<li><a href="#download">Download</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<div class="overlay overlay-boxify">
-			<nav>
-				<ul>
-					<li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
-					<li><a href="#features"><i class="fa fa-flash"></i>Features</a></li>
-				</ul>
-				<ul>
-					<li><a href="#screenshots"><i class="fa fa-desktop"></i>Screenshots</a></li>
-					<li><a href="#download"><i class="fa fa-download"></i>Download</a></li>
-				</ul>
-			</nav>
-		</div>
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/min/toucheffects-min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/flickity.pkgd.min.js"></script>
-		<script src="js/jquery.fancybox.pack.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/retina.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/min/scripts-min.js"></script>
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-	</body>
+
+			
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+	<script type="text/javascript" src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+	<script type="text/javascript">
+
+		// Revolution Slider Scripts
+		var tpj=jQuery;
+		tpj.noConflict();
+
+		tpj(document).ready(function() {
+
+			var apiRevoSlider = tpj('.tp-banner').show().revolution(
+			{
+				sliderType:"standard",
+				jsFileLocation:"include/rs-plugin/js/",
+				sliderLayout:"fullscreen",
+				dottedOverlay:"none",
+				delay:16000,
+				startwidth:1140,
+				startheight:700,
+				hideThumbs:200,
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:5,
+
+				navigation: {
+					keyboardNavigation:"off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation:"off",
+					onHoverStop:"off",
+					touch:{
+						touchenabled:"on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+						style: "hermes",
+						enable: true,
+						hide_onmobile: false,
+						hide_onleave: false,
+						tmp: '<div class="tp-arr-allwrapper">   <div class="tp-arr-imgholder"></div>    <div class="tp-arr-titleholder">{{title}}</div> </div>',
+						left: {
+							h_align: "left",
+							v_align: "center",
+							h_offset: 10,
+							v_offset: 0
+						},
+						right: {
+							h_align: "right",
+							v_align: "center",
+							h_offset: 10,
+							v_offset: 0
+						}
+					}
+				},
+
+				touchenabled:"on",
+				onHoverStop:"on",
+
+				swipe_velocity: 0.7,
+				swipe_min_touches: 1,
+				swipe_max_touches: 1,
+				drag_block_vertical: false,
+
+				keyboardNavigation:"off",
+
+				shadow:0,
+				fullWidth:"off",
+				fullScreen:"on",
+
+				spinner:"spinner4",
+
+				stopLoop:"off",
+				stopAfterLoops:-1,
+				stopAtSlide:-1,
+
+				shuffle:"off",
+
+				autoHeight:"off",
+				forceFullWidth:"off",
+
+				hideThumbsOnMobile:"off",
+				hideNavDelayOnMobile:1500,
+				hideBulletsOnMobile:"off",
+				hideArrowsOnMobile:"off",
+				hideThumbsUnderResolution:0,
+
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				startWithSlide:0,
+			});
+
+			apiRevoSlider.bind("revolution.slide.onchange",function (e,data) {
+				SEMICOLON.slider.revolutionSliderMenu();
+			});
+
+		}); //ready
+
+	</script>
+
+</body>
 </html>
